@@ -192,7 +192,19 @@ public class Utils : MonoBehaviour
 	
 	} // end BoundsInBoundsCheck
 	
-	
+	public static GameObject FindTaggedParent(GameObject go){
+		if (go.tag != "Untagged") {
+			return(go);
+		}//end of if
+		if (go.transform.parent == null) {
+			return(null);
+		}//end of if
+		return(FindTaggedParent(go.transform.parent.gameObject));
+	}//end of FindTaggedParent(GameObject go)
+
+	public static GameObject FindTaggedParent(Transform t){
+		return(FindTaggedParent (t.gameObject));
+	}//end of FindTaggedParent(Transform t)
 	
 }// End of Util Class
 
