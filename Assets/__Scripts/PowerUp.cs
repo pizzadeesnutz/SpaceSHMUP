@@ -14,7 +14,7 @@ public class PowerUp : MonoBehaviour {
 	public float birthTime;
 
 	void Awake(){
-		cube = transform.Find ("Cube").gameObject;
+		cube = transform.Find ("Cube").gameObject; //this is causing null pointer exception
 		letter = GetComponent<TextMesh> ();
 		Vector3 vel = Random.onUnitSphere;
 		vel.z = 0;

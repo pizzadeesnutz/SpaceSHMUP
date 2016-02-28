@@ -2,17 +2,18 @@
 using System.Collections;
 
 public class Enemy : MonoBehaviour {
-	public float	speed = 10f;
-	public float	fireRate = 0.3f;
-	public float	health = 10;
-	public int		score = 100;
-	public int 		showDamageForFrames = 2;
+	public float		speed = 10f;
+	public float		fireRate = 0.3f;
+	public float		health = 10;
+	public int			score = 100;
+	public int 			showDamageForFrames = 2;
+	public float 		powerUpDropChance = 1f;
 	public bool _______________;
-	public Color[] originalColors;
-	public Material[] materials;
-	public int remainingDamageFrames = 0;
-	public Bounds bounds;
-	public Vector3 boundsCenterOffset;
+	public Color[] 		originalColors;
+	public Material[] 	materials;
+	public int 			remainingDamageFrames = 0;
+	public Bounds 		bounds;
+	public Vector3 		boundsCenterOffset;
 
 	void Start () {
 	
@@ -79,6 +80,7 @@ public class Enemy : MonoBehaviour {
 			health -= Main.W_DEFS [p.type].damageOnHit;
 			ShowDamage ();
 			if (health <= 0) {
+				Main.S.ShipDestroyed (this);
 				Destroy (this.gameObject);
 			}//end of if
 			Destroy (other);

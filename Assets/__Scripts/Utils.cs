@@ -219,5 +219,3 @@ public class Utils : MonoBehaviour
 		return (mats.ToArray());
 	}//end of GetAll Materials(GameObjet go)
 }// End of Util Class
-
-
