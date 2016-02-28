@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour {
 	public float		health = 10;
 	public int			score = 100;
 	public int 			showDamageForFrames = 2;
-	public float 		powerUpDropChance = 1f;
+	public float 		powerUpDropChance = .25f;
 	public bool _______________;
 	public Color[] 		originalColors;
 	public Material[] 	materials;
