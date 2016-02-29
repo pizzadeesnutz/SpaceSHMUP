@@ -15,7 +15,7 @@ public class Enemy_1 : Enemy {
 	}//end of Start()
 
 	void Update () {
-
+		Move ();
 	}//end of Update()
 
 	public override void Move(){
